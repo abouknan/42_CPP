@@ -1,19 +1,36 @@
+#include "PhoneBook.hpp"
 #include <iostream>
 
-class list
+std::string get_arg(void)
 {
-    public:
-        int a;
-        std::string str;
-        list(){a = 1, str = "Ali Bouknana";}
-        list(int s, std::string ptr){a = s, str = ptr;}
-};
+    std::string cmd;
+
+    std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
+    if (std::getline(std::cin, cmd))
+        return (cmd);
+    return ("NULL");
+}
 
 int main ()
 {
-    list obj;
-    list obj1(2, "Aya Achy");
+    std::string arg;
 
-    std::cout << obj.a << "\t" << obj.str <<std::endl;
-    std::cout << obj1.a << "\t" << obj1.str <<std::endl;
+    while (1)
+    {
+        arg = get_arg();
+        if (arg == "NULL")
+            arg = "EXIT";
+        if (arg == "ADD")
+        {
+
+        }
+        else if (arg == "SEARCH")
+        {
+            
+        }
+        else if (arg == "EXIT")
+            break;
+        else
+            std::cout << "Wrong!" << std::endl;
+    }
 }
