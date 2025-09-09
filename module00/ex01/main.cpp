@@ -28,6 +28,8 @@ int is_valid(std::string arg)
     int res;
 
     res = 1;
+    if (arg.empty())
+        return (0);
     for (size_t i = 0; i < arg.size(); i++)
     {
         if (!std::isalnum(arg[i]) && !std::isspace(arg[i]))
@@ -62,12 +64,14 @@ int main (void)
         if (arg == "ADD")
         {
             std::cout << "[Phonebook] 📇 Let's add a new contact!" << std::endl;
-            for (int i = 0; i < 5; i++)
-                (print_contact(i), std::getline(std::cin, arg));
-            std::cout << arg << std::endl;
+            for (int index = 0; index < 5; index++)
+                if (!st.addcontact(index))
+                    return(-1);
         }
         else if (arg == "SEARCH")
         {
+            if (!st.contact_num(st))
+                std::cout << "No contacts to search." << std::endl;
         }
         else if (arg == "EXIT")
             break;

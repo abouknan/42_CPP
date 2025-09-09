@@ -14,9 +14,13 @@ class Contact
 class Phonebook
 {
     public:
-        void addcontact(int index);
+        Phonebook();
+        int addcontact(int index);
+        int contact_num(Phonebook st);
 
     private:
+        // int     index;
+        int     contacts_number;
         Contact contacts[8];
 };
 
