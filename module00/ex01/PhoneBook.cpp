@@ -56,3 +56,13 @@ int Phonebook::contact_num(void)
 {
     return this->contacts_number;
 }
+
+void Phonebook::ShowContacts(void)
+{
+    std::cout << BLUE << "[PhoneBook] 📇 Your contacts: " << RESET << std::endl;
+    std::cout << std::setw(10) << "Index" << "|";
+    std::cout << std::setw(10) << "First Name" << "|";
+    std::cout << std::setw(10) << "Last Name" << "|";
+    std::cout << std::setw(10) << "Nickname" << std::endl;
+    
+}

@@ -74,9 +74,15 @@ int main (void)
         }
         else if (arg == "SEARCH")
         {
+            st.ShowContacts();
+            return (0);
             if (!st.contact_num())
                 std::cout << YELLOW << "[PhoneBook] 📂 No contacts available. Try adding one with ADD."
                 << RESET << std::endl;
+            else
+            {
+                st.ShowContacts();
+            }
         }
         else if (arg == "EXIT")
             break;

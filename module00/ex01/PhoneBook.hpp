@@ -2,6 +2,7 @@
 # define PHONEBOOK_HPP
 
 #include <iostream>
+#include <iomanip>
 
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
@@ -40,6 +41,8 @@ class Phonebook
         Phonebook();
         int addcontact(int index);
         int contact_num(void);
+        void ShowContacts(void);
+        int contact_count(void);
 
     private:
         int     tail;
