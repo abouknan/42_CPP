@@ -40,9 +40,9 @@ class Phonebook
     public:
         Phonebook();
         int addcontact(int index);
-        int contact_num(void);
+        int Get_Cn(void);
         void ShowContacts(void);
-        int contact_count(void);
+        void Increment_Contact(void);
 
     private:
         int     tail;

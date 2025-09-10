@@ -71,12 +71,11 @@ int main (void)
             for (int index = 0; index < 5; index++)
                 if (!st.addcontact(index))
                     return(-1);
+            st.Increment_Contact();
         }
         else if (arg == "SEARCH")
         {
-            st.ShowContacts();
-            return (0);
-            if (!st.contact_num())
+            if (!st.Get_Cn())
                 std::cout << YELLOW << "[PhoneBook] 📂 No contacts available. Try adding one with ADD."
                 << RESET << std::endl;
             else

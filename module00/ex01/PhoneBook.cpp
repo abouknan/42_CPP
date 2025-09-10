@@ -11,7 +11,12 @@ std::string Contact::field(int index, FieldAction action, const std::string inpu
         return this->fields[index];
     return "";
 }
-
+void Phonebook::Increment_Contact(void)
+{
+    this->tail = (this->tail + 1) % 8;
+    if (this->contacts_number < 8)
+        this->contacts_number++;
+}
 
 Phonebook::Phonebook(void): tail(0), contacts_number(0)
 {
@@ -48,11 +53,10 @@ int Phonebook::addcontact(int index)
         else
             return (0);
     }
-    this->tail = (this->tail + 1) % 8;
     return (1);
 }
 
-int Phonebook::contact_num(void)
+int Phonebook::Get_Cn(void)
 {
     return this->contacts_number;
 }
@@ -64,5 +68,20 @@ void Phonebook::ShowContacts(void)
     std::cout << std::setw(10) << "First Name" << "|";
     std::cout << std::setw(10) << "Last Name" << "|";
     std::cout << std::setw(10) << "Nickname" << std::endl;
-    
+
+    for (int i = 0; i < Get_Cn(); i++)
+    {
+        std::cout << std::setw(10) << i << "|";
+        for (int field = 0; field < 3; field++)
+        {
+            std::string input = this->contacts[i].field(field, GET);
+            if (input.size() > 10)
+                input = input.substr(0, 9) + ".";
+            std::cout << std::setw(10) << input;
+            if (field != 2)
+                std::cout << "|";
+        }
+        std::cout << std::endl;
+    }
 }
+
