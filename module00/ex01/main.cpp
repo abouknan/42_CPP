@@ -1,22 +1,22 @@
 #include "PhoneBook.hpp"
 
-void print_contact(int index)
+void print_contact(Field f)
 {
-    switch (index)
+    switch (f)
     {
-        case 0:
+        case FIRST_NAME:
             std::cout << "first name: ";
             break;
-        case 1:
+        case LAST_NAME:
             std::cout << "last name: ";
             break;
-        case 2:
+        case NICKNAME:
             std::cout << "nickname: ";
             break;
-        case 3:
+        case PHONE_NUMBER:
             std::cout << "phone number: ";
             break;
-        case 4:
+        case DARKEST_SECRET:
             std::cout << "darkest secret: ";
             break;
     }

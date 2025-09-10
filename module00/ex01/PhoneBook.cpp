@@ -1,13 +1,17 @@
 #include "PhoneBook.hpp"
 
-void print_contact(int index);
+void print_contact(Field f);
 int is_valid(int index, std::string input);
 
-void Contact::setfields(int index, std::string input)
+std::string Contact::field(int index, FieldAction action, const std::string input = "")
 {
-    this->fields[index] = input;
-    // std::cout << YELLOW << this->fields[index] << RESET <<std::endl;
+    if (action == SET)
+        return this->fields[index] = input, "";
+    else if (action == GET)
+        return this->fields[index];
+    return "";
 }
+
 
 Phonebook::Phonebook(void): tail(0), contacts_number(0)
 {
@@ -20,12 +24,12 @@ int Phonebook::addcontact(int index)
 
     while (1)
     {
-        print_contact(index);
+        print_contact((Field)index);
         if (std::getline(std::cin, input))
         {
             if (is_valid(index, input))
             {
-                this->contacts[this->tail].setfields(index, input);
+                this->contacts[this->tail].field(index, SET, input);
                 break;
             }
             else

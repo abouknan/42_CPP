@@ -9,10 +9,26 @@
 #define BLUE    "\033[34m"
 #define RESET   "\033[0m"
 
+enum FieldAction 
+{
+    GET,
+    SET
+};
+
+enum Field
+{
+    FIRST_NAME,
+    LAST_NAME,
+    NICKNAME,
+    PHONE_NUMBER,
+    DARKEST_SECRET
+};
+
 class Contact
 {
     public:
-        void setfields(int index, std::string input);
+        std::string field(int index, FieldAction action,
+            const std::string input);
 
     private:
         std::string fields[5];
