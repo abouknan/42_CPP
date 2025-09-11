@@ -51,7 +51,7 @@ int Phonebook::addcontact(int index)
             }
         }
         else
-            return (0);
+            return (std::cout << "\n", 0);
     }
     return (1);
 }

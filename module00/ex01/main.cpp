@@ -7,28 +7,34 @@ int Phonebook::getIndex(void)
 
     while (1)
     {
+        int var = 0;
+
         std::cout << YELLOW << "[PhoneBook] 🔍 Enter the index for more info: ";
         if (!std::getline(std::cin, input))
-            return -1;
+            return std::cout << "\n", -1;
         std::cout << RESET;
-        size_t start = input.find_first_not_of(" \t\n\r\f\v");
-        size_t end = input.find_last_not_of(" \t\n\r\f\v");
-        if (start == std::string::npos)
-            continue;
-        input = input.substr(start, end - start + 1);
-        try
+        if (input.empty())
         {
-            index = std::stoi(input);
-        }
-        catch (...)
-        {
-            std::cout << RED <<"[PhoneBook] ❌ Please enter a valid number!" 
-            << RESET <<std::endl;
+            std::cout << RED << "[PhoneBook] ❌ Empty input" 
+            << RESET << std::endl;
             continue;
         }
+        for (size_t i = 0; i < input.size(); i++)
+        {
+            if (!std::isdigit(input[i]))
+            {
+                std::cout << RED << "[PhoneBook] ❌ Invalid input"
+                << RESET << std::endl;
+                var = 1;
+                break;
+            }
+        }
+        if (var)
+            continue;
+        index = std::atoi(input.c_str());
         if (index < 0 || index >= this->Get_Cn())
         {
-            std::cout << RED << "[PhoneBook] ⚠️ Index out of range." 
+            std::cout << RED << "[PhoneBook] ⚠️ Index out of range."
             << RESET << std::endl;
             continue;
         }
@@ -97,7 +103,7 @@ std::string get_arg(void)
     std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
     if (std::getline(std::cin, cmd))
         return (cmd);
-    return ("NULL");
+    return (std::cout << "\n","NULL");
 }
 
 int main (void)
@@ -115,7 +121,7 @@ int main (void)
             std::cout << BLUE << "[Phonebook] 📇 Let's add a new contact!" << RESET << std::endl;
             for (int index = 0; index < 5; index++)
                 if (!st.addcontact(index))
-                    return(-1);
+                    return (1);
             st.Increment_Contact();
         }
         else if (arg == "SEARCH")
@@ -129,6 +135,8 @@ int main (void)
 
                 st.ShowContacts();
                 index = st.getIndex();
+                if (index == -1)
+                    return (1);
                 for (int i = 0; i < 5 ; i++)
                     (print_contact((Field)i),st.print_field(index, i));
             }
