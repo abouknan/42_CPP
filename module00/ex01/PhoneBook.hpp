@@ -30,7 +30,6 @@ class Contact
     public:
         std::string field(int index, FieldAction action,
             const std::string input);
-
     private:
         std::string fields[5];
 };
@@ -43,6 +42,8 @@ class Phonebook
         int Get_Cn(void);
         void ShowContacts(void);
         void Increment_Contact(void);
+        int getIndex(void);
+        void print_field(int idx, int field);
 
     private:
         int     tail;

@@ -1,5 +1,42 @@
 #include "PhoneBook.hpp"
 
+int Phonebook::getIndex(void)
+{
+    std::string input;
+    int index;
+
+    while (1)
+    {
+        std::cout << YELLOW << "[PhoneBook] 🔍 Enter the index for more info: ";
+        if (!std::getline(std::cin, input))
+            return -1;
+        std::cout << RESET;
+        size_t start = input.find_first_not_of(" \t\n\r\f\v");
+        size_t end = input.find_last_not_of(" \t\n\r\f\v");
+        if (start == std::string::npos)
+            continue;
+        input = input.substr(start, end - start + 1);
+        try
+        {
+            index = std::stoi(input);
+        }
+        catch (...)
+        {
+            std::cout << RED <<"[PhoneBook] ❌ Please enter a valid number!" 
+            << RESET <<std::endl;
+            continue;
+        }
+        if (index < 0 || index >= this->Get_Cn())
+        {
+            std::cout << RED << "[PhoneBook] ⚠️ Index out of range." 
+            << RESET << std::endl;
+            continue;
+        }
+        return index;
+    }
+}
+
+
 void print_contact(Field f)
 {
     switch (f)
@@ -21,6 +58,14 @@ void print_contact(Field f)
             break;
     }
     return ;
+}
+
+void Phonebook::print_field(int idx, int field)
+{
+    std::string arg;
+
+    arg = this->contacts[idx].field(field, GET, "");
+    std::cout << arg << std::endl;
 }
 
 int is_valid(int index, std::string arg)
@@ -80,7 +125,12 @@ int main (void)
                 << RESET << std::endl;
             else
             {
+                int index;
+
                 st.ShowContacts();
+                index = st.getIndex();
+                for (int i = 0; i < 5 ; i++)
+                    (print_contact((Field)i),st.print_field(index, i));
             }
         }
         else if (arg == "EXIT")
