@@ -6,6 +6,10 @@ int main (void)
     Zombie *zombie;
 
     zombie = zombieHorde(N, "Ali");
+    if (!zombie)
+        return 1;
     for (int i = 0; i < N; i++)
-        zombie->announce();
+        zombie[i].announce();
+
+    delete[] zombie;
 }
