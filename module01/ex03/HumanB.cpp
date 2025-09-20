@@ -10,6 +10,8 @@ HumanB::~HumanB()
 
 void HumanB::attack(void)
 {
+    if (!weapon)
+        return ;
     std::cout << name << " attacks with their " 
     << weapon->getType() << std::endl;
 }
