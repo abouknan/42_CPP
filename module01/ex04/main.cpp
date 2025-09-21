@@ -29,6 +29,11 @@ int main (int ac, char **av)
     if (foundPos == std::string::npos)
         return std::cout << RED << "The word '" << av[2] 
         << "' was not found." << RESET << std::endl, 1;
+    while (1)
+    {
+        /* code */
+    }
+    
     std::cout << foundPos << std::endl;
     // std::cout << line << std::endl;
     inputFile.close();
