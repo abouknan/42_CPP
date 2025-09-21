@@ -10,9 +10,10 @@ int main (int ac, char **av)
     std::string tmp;
     std::string line;
     std::ifstream inputFile;
+    std::ofstream outputFile;
 
     if (ac != 4)
-        return 1;
+        return std::cout << RED << "Wrong Number of Args!!" << RESET << std::endl, 1;
     inputFile.open(av[1]);
     if (!inputFile.is_open())
         return  std::cerr << RED << "Error opening file!" << RESET << std::endl, 1;
@@ -25,16 +26,29 @@ int main (int ac, char **av)
             break;
         line += "\n";
     }
-    size_t foundPos = line.find(av[2]);
+    inputFile.close();
+    std::string s1 = av[2];
+    std::string s2 = av[3];
+    std::string filename = av[1];
+    size_t foundPos = 0;
+    foundPos = line.find(s1, foundPos);
     if (foundPos == std::string::npos)
-        return std::cout << RED << "The word '" << av[2] 
-        << "' was not found." << RESET << std::endl, 1;
+        return std::cout << RED << "Failed to find gived string" << RESET << std::endl, 1;
     while (1)
     {
-        /* code */
+        line.erase(foundPos, s1.length());
+        line.insert(foundPos, s2);
+        foundPos += s2.length();
+        if ((foundPos = line.find(s1, foundPos)) == std::string::npos)
+            break;
     }
-    
-    std::cout << foundPos << std::endl;
-    // std::cout << line << std::endl;
-    inputFile.close();
+    filename.append(".replace");
+    outputFile.open(filename.c_str());
+    if (!outputFile.is_open())
+        return std::cerr << RED << "Error creating output file!" << RESET << std::endl, 1;
+    outputFile << line;
+    outputFile.close();
+    std::cout << BLUE << "Replacement completed! Output: " 
+    << filename << RESET << std::endl;
+    return 0;
 }

@@ -1,10 +1,10 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRCS = main.cpp
+SRCS = main.cpp Harl.cpp 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = replace_tool
+NAME = harlFilter
 
 all: $(NAME)
 
