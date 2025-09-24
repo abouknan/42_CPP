@@ -5,6 +5,11 @@
 #define RED     "\033[31m"
 #define RESET   "\033[0m"
 
+inline bool empty_args(std::string s1, std::string s2)
+{
+    return s1.empty() || s2.empty();
+}
+
 int main (int ac, char **av)
 {
     std::string tmp;
@@ -12,8 +17,8 @@ int main (int ac, char **av)
     std::ifstream inputFile;
     std::ofstream outputFile;
 
-    if (ac != 4)
-        return std::cout << RED << "Wrong Number of Args!!" << RESET << std::endl, 1;
+    if (ac != 4 || empty_args(av[2], av[3]))
+        return std::cout << RED << "Wrong Args!!" << RESET << std::endl, 1;
     inputFile.open(av[1]);
     if (!inputFile.is_open())
         return  std::cerr << RED << "Error opening file!" << RESET << std::endl, 1;

@@ -1,21 +1,13 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
+#include "Contact.hpp"
 
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
 #define YELLOW  "\033[33m"
 #define BLUE    "\033[34m"
 #define RESET   "\033[0m"
-
-enum FieldAction 
-{
-    GET,
-    SET
-};
 
 enum Field
 {
@@ -24,15 +16,6 @@ enum Field
     NICKNAME,
     PHONE_NUMBER,
     DARKEST_SECRET
-};
-
-class Contact
-{
-    public:
-        std::string field(int index, FieldAction action,
-            const std::string input);
-    private:
-        std::string fields[5];
 };
 
 class Phonebook
