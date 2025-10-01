@@ -19,35 +19,12 @@ Fixed& Fixed::operator=(const Fixed& fixed)
 
 Fixed::~Fixed() {}
 
-bool Fixed::operator>(const Fixed& other) const
-{
-    return this->FixedInt > other.FixedInt;
-}
-
-bool Fixed::operator<(const Fixed& other) const
-{
-    return this->FixedInt < other.FixedInt;
-}
-
-bool Fixed::operator>=(const Fixed& other) const
-{
-    return this->FixedInt >= other.FixedInt;
-}
-
-bool Fixed::operator<=(const Fixed& other) const
-{
-    return this->FixedInt <= other.FixedInt;
-}
-
-bool Fixed::operator==(const Fixed& other) const
-{
-    return this->FixedInt == other.FixedInt;
-}
-
-bool Fixed::operator!=(const Fixed& other) const
-{
-    return this->FixedInt != other.FixedInt;
-}
+bool Fixed::operator>(const Fixed& other) const { return this->FixedInt > other.FixedInt; }
+bool Fixed::operator<(const Fixed& other) const { return this->FixedInt < other.FixedInt; }
+bool Fixed::operator>=(const Fixed& other) const { return this->FixedInt >= other.FixedInt; }
+bool Fixed::operator<=(const Fixed& other) const { return this->FixedInt <= other.FixedInt; }
+bool Fixed::operator==(const Fixed& other) const { return this->FixedInt == other.FixedInt; }
+bool Fixed::operator!=(const Fixed& other) const { return this->FixedInt != other.FixedInt; }
 
 Fixed Fixed::operator+(const Fixed& other) const
 {
