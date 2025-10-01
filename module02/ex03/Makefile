@@ -1,12 +1,12 @@
 CX = c++
-CXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+CXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Fixed.cpp main.cpp
-
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = Fixed
+NAME = bsp
 
 all: $(NAME)
+
 $(NAME): $(OBJS)
 	$(CX) $(CXFLAGS) $(OBJS) -o $(NAME)
 

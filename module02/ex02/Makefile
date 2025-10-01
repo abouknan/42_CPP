@@ -1,7 +1,7 @@
 CX = c++
 CXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRCS = Fixed.cpp main.cpp
+SRCS = main.cpp Fixed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 NAME = Fixed
