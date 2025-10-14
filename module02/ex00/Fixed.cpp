@@ -4,7 +4,11 @@ const int Fixed::FractionalBits = 8;
 
 Fixed::Fixed() {setRawBits(0), std::cout << "Default constructor called" << std::endl;}
 
-Fixed::Fixed(const Fixed& fixed):FixedInt(fixed.FixedInt) {std::cout << "Copy constructor called" << std::endl;}
+Fixed::Fixed(const Fixed& fixed)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    this->FixedInt = fixed.getRawBits();
+}
 
 Fixed& Fixed::operator=(const Fixed& fixed)
 {

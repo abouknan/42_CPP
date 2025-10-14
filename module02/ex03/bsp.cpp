@@ -4,8 +4,8 @@ static Fixed area(Point const a, Point const b, Point const c)
 {
     Fixed area = ((a.getX() * (b.getY() - c.getY())) + 
                   (b.getX() * (c.getY() - a.getY())) + 
-                  (c.getX() * (a.getY() - b.getY()))) / Fixed(2);
-    return (area < 0) ? area * Fixed(-1) : area;
+                  (c.getX() * (a.getY() - b.getY()))) / 2;
+    return (area < 0) ? area * -1 : area;
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)

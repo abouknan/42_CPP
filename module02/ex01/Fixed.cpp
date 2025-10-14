@@ -18,9 +18,10 @@ Fixed::Fixed(const float value) : FixedInt(roundf(value * (1 << FractionalBits))
     std::cout << "Float constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& fixed) : FixedInt(fixed.FixedInt)
+Fixed::Fixed(const Fixed& fixed)
 {
     std::cout << "Copy constructor called" << std::endl;
+    *this = fixed;
 }
 
 Fixed& Fixed::operator=(const Fixed& fixed)
