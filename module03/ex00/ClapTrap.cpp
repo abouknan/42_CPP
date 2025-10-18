@@ -14,6 +14,7 @@ ClapTrap::ClapTrap(ClapTrap const& other)
     HP = other.HP;
     EP = other.EP;
     AD = other.AD;
+    std::cout << "ClapTrap Copy constructor called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap const& other)
