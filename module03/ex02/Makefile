@@ -1,11 +1,11 @@
 CX = c++
 CXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = ClapTrap.cpp ScavTrap.cpp main.cpp
+SRCS = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = ScavTrap
+NAME = FragTrap
 
 all: $(NAME)
 $(NAME) :$(OBJS)

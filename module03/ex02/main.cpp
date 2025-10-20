@@ -1,4 +1,4 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
@@ -14,6 +14,15 @@ int main(void)
     {
         ScavTrap a("Hugo");
         a.attack("Victor");
+        a.takeDamage(5);
+        a.beRepaired(6);
+    }
+
+    std::cout << std::endl << std::endl;
+
+    {
+        FragTrap a("Maya");
+        a.attack("Brick");
         a.takeDamage(5);
         a.beRepaired(6);
     }
