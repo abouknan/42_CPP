@@ -26,7 +26,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& other)
         this->EP = other.EP;
         this->AD = other.AD;
     }
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "ClapTrap Copy assignment operator called" << std::endl;
     return *this;
 }
 
@@ -84,5 +84,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap() 
 {
-    std::cout << "Destructor called\n";
+    std::cout << "ClapTrap Destructor called\n";
 }
