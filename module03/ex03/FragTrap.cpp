@@ -5,6 +5,7 @@ FragTrap::FragTrap(): ClapTrap("unknown")
     this->HP = 100;
     this->EP = 100;
     this->AD = 30;
+
     std::cout << "FragTrap Default constructor called" << std::endl;
 }
 
@@ -13,6 +14,7 @@ FragTrap::FragTrap(std::string const& _name) : ClapTrap(_name)
     this->HP = 100;
     this->EP = 100;
     this->AD = 30;
+
     std::cout << "FragTrap Parameterized constructor called" << std::endl;
 }
 
@@ -21,6 +23,7 @@ FragTrap::FragTrap(FragTrap const& other): ClapTrap(other.name)
     HP = other.HP;
     EP = other.EP;
     AD = other.AD;
+    
     std::cout << "FragTrap Copy constructor called" << std::endl;
 }
 

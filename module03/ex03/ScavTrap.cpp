@@ -5,6 +5,7 @@ ScavTrap::ScavTrap(): ClapTrap("unknown")
     this->HP = 100;
     this->EP = 50;
     this->AD = 20;
+
     std::cout << "ScavTrap Default constructor called" << std::endl;
 }
 
@@ -13,6 +14,7 @@ ScavTrap::ScavTrap(std::string const& _name) : ClapTrap(_name)
     this->HP = 100;
     this->EP = 50;
     this->AD = 20;
+
     std::cout << "ScavTrap Parameterized constructor called" << std::endl;
 }
 
@@ -21,6 +23,7 @@ ScavTrap::ScavTrap(ScavTrap const& other): ClapTrap(other.name)
     HP = other.HP;
     EP = other.EP;
     AD = other.AD;
+    
     std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
 
