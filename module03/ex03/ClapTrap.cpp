@@ -16,6 +16,7 @@ ClapTrap::ClapTrap(ClapTrap const& other)
     HP = other.HP;
     EP = other.EP;
     AD = other.AD;
+
     std::cout << "ClapTrap Copy constructor called" << std::endl;
 }
 
@@ -28,6 +29,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& other)
         this->EP = other.EP;
         this->AD = other.AD;
     }
+
     std::cout << "ClapTrap Copy assignment operator called" << std::endl;
     return *this;
 }
@@ -73,6 +75,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << name << " can’t be repaired — it’s destroyed!" << std::endl;
         return;
     }
+    
     if (EP <= 0)
     {
         std::cout << "ClapTrap " << name << " has no energy points left to repair itself!" << std::endl;
