@@ -20,7 +20,7 @@ DiamondTrap::DiamondTrap(std::string _name)
     std::cout << "DiamondTrap Parameterized constructor called" << std::endl;
 }
 
-void DiamondTrap::attack(std::string target)
+void DiamondTrap::attack(std::string const target)
 {
     ScavTrap::attack(target);
 }
@@ -33,6 +33,7 @@ void DiamondTrap::whoAmI()
                   << " cannot reveal its identity (no HP or EP left!)" << std::endl;
         return;
     }
+    
     std::cout << "I am DiamondTrap " << this->name
               << " and my ClapTrap name is " << ClapTrap::name << std::endl;
 }
