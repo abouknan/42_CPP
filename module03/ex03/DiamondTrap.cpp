@@ -20,6 +20,24 @@ DiamondTrap::DiamondTrap(std::string _name)
     std::cout << "DiamondTrap Parameterized constructor called" << std::endl;
 }
 
+DiamondTrap::DiamondTrap(const DiamondTrap &other)
+    : ClapTrap(other), ScavTrap(other), FragTrap(other)
+{
+    *this = other;
+    std::cout << "DiamondTrap copy constructor called\n";
+}
+
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
+{
+    if (this != &other)
+    {
+        ClapTrap::operator=(other);
+        name = other.name;
+    }
+    std::cout << "DiamondTrap assignment operator called\n";
+    return *this;
+}
+
 void DiamondTrap::attack(std::string const target)
 {
     ScavTrap::attack(target);

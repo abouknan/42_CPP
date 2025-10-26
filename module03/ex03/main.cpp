@@ -22,7 +22,7 @@ int main()
     DiamondTrap d2; // Default constructor
 
     std::cout << "\n--- Assigning and Testing Copy ---" << std::endl;
-    // d2 = d1; // If you implement operator=
+    d2 = d1; // If you implement operator=
     d2.whoAmI(); // Should show same names as d1 (if copied correctly)
 
     std::cout << "\n--- Exiting main() ---" << std::endl;
