@@ -1,7 +1,7 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap()
-    : ClapTrap("Default_clap_name"), ScavTrap(), FragTrap(), name("Default")
+    : ClapTrap("Default_clap_name"), name("Default")
 {
     this->HP = 100;
     this->EP = 50;
@@ -11,7 +11,7 @@ DiamondTrap::DiamondTrap()
 }
 
 DiamondTrap::DiamondTrap(std::string _name)
-    : ClapTrap(_name + "_clap_name"), ScavTrap(_name), FragTrap(_name), name(_name)
+    : ClapTrap(_name  + "_clap_name"), name(_name)
 {
     this->HP = 100;
     this->EP = 50;
@@ -21,7 +21,7 @@ DiamondTrap::DiamondTrap(std::string _name)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
-    : ClapTrap(other), ScavTrap(other), FragTrap(other)
+    : ClapTrap(other)
 {
     *this = other;
     std::cout << "DiamondTrap copy constructor called\n";

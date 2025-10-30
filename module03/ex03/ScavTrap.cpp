@@ -27,6 +27,16 @@ ScavTrap::ScavTrap(ScavTrap const& other): ClapTrap(other.name)
     std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
 
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+{
+    if (this != &other)
+    {
+        ClapTrap::operator=(other);
+        std::cout << "ScavTrap copy assignment operator called" << std::endl;
+    }
+    return *this;
+}
+
 void ScavTrap::attack(const std::string& target)
 {
     if (HP <= 0)

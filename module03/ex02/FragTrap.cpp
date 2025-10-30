@@ -24,6 +24,16 @@ FragTrap::FragTrap(FragTrap const& other): ClapTrap(other.name)
     std::cout << "FragTrap Copy constructor called" << std::endl;
 }
 
+FragTrap& FragTrap::operator=(const FragTrap& other)
+{
+    if (this != &other)
+    {
+        ClapTrap::operator=(other);
+        std::cout << "FragTrap copy assignment operator called" << std::endl;
+    }
+    return *this;
+}
+
 void FragTrap::attack(const std::string& target)
 {
     if (HP <= 0)
