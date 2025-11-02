@@ -53,7 +53,6 @@ void ScavTrap::attack(const std::string& target)
         << ", causing " << this->AD << " points of damage!" << std::endl;
 }
 
-
 void ScavTrap::guardGate()
 {
     if (this->HP <= 0 || this->EP <= 0)
