@@ -21,9 +21,8 @@ DiamondTrap::DiamondTrap(std::string _name)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
-    : ClapTrap(other)
+    : ClapTrap(other), name(other.name)
 {
-    *this = other;
     std::cout << "DiamondTrap copy constructor called\n";
 }
 
@@ -38,7 +37,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
     return *this;
 }
 
-void DiamondTrap::attack(std::string const target)
+void DiamondTrap::attack(const std::string& target)
 {
     ScavTrap::attack(target);
 }

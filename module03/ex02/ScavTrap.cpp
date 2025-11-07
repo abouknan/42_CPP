@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(std::string const& _name) : ClapTrap(_name)
     std::cout << "ScavTrap Parameterized constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const& other): ClapTrap(other.name)
+ScavTrap::ScavTrap(ScavTrap const& other): ClapTrap(other)
 {
     HP = other.HP;
     EP = other.EP;

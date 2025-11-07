@@ -16,11 +16,8 @@ FragTrap::FragTrap(std::string const& _name) : ClapTrap(_name)
     std::cout << "FragTrap Parameterized constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const& other): ClapTrap(other.name)
+FragTrap::FragTrap(FragTrap const& other): ClapTrap(other)
 {
-    HP = other.HP;
-    EP = other.EP;
-    AD = other.AD;
     std::cout << "FragTrap Copy constructor called" << std::endl;
 }
 

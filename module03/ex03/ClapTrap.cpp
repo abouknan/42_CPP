@@ -5,7 +5,7 @@ ClapTrap::ClapTrap(): name("NoName"), HP(10), EP(10), AD(0)
     std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string const _name): name(_name), HP(10), EP(10), AD(0)
+ClapTrap::ClapTrap(const std::string& _name): name(_name), HP(10), EP(10), AD(0)
 {
     std::cout << "ClapTrap Parameterized constructor called" << std::endl;
 }
