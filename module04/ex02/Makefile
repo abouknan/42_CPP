@@ -1,11 +1,11 @@
 CX = c++
 CXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Animal.cpp Dog.cpp Cat.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = Animal.cpp Dog.cpp Cat.cpp main.cpp Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = Animal
+NAME = Brain
 
 all: $(NAME)
 $(NAME) :$(OBJS)
