@@ -1,56 +1,30 @@
-Good — I sketched a practical plan to start the booking site and put it in a TODO list so we can track progress.
+I'll create a tracked TODO list for the project plan (so we can mark the scaffold task as in-progress and keep progress visible). Expected outcome: a persistent todo list with the scaffold step set to in-progress and all other items not-started.
 
-High-level proposal (what I'd build)
+Created 13 todos
 
-Purpose: A tourist transport booking site focused on Agadir and Morocco — search routes, choose vehicle/seat, book & pay, get confirmations, admin manages vehicles/schedules.
-MVP features:
-City/route search and list of available transports (date/time, vehicle type, seats left, price)
-Booking flow: select seats (or passenger count), collect contact/payment info, confirmation page + email
-Admin UI: add/edit vehicles, routes, schedules, view bookings
-Basic user accounts (optional): view/cancel bookings
-Map view for routes (optional) and localization (French + Arabic + English)
-Core entities (sketch):
-User {id, name, email, phone, role}
-Vehicle {id, type, capacity, plate, features}
-Route {id, origin, destination, waypoints?, distance}
-Schedule {id, route_id, vehicle_id, datetime, seats_total, seats_booked, price}
-Booking {id, schedule_id, user_info, seats, total_price, status, payment_id}
-API endpoints (REST examples):
-GET /routes?from=Agadir&to=Marrakech&date=...
-GET /schedules/:id
-POST /bookings
-GET /admin/bookings
-POST /webhook/payment (Stripe)
-Tech stack recommendations (pick one):
-Modern fullstack (recommended): Next.js (React) for frontend + API routes, PostgreSQL (managed), Vercel deployment. Benefits: SSR for SEO, single repo, easy deploy.
-Alternative backend-first: React + Express/Nest + PostgreSQL on DigitalOcean/Heroku.
-Maps: Leaflet + OpenStreetMap or Mapbox (paid), Geocoding via Mapbox/Google Maps.
-Payments: Stripe (recommended) or PayPal.
-Emails: SendGrid or Mailgun.
-Auth: NextAuth.js (if using Next.js) or JWT.
-Styling: Tailwind CSS for fast UI.
-Non-functional requirements & constraints:
-GDPR and data privacy (collect minimal PII, add privacy policy)
-Locale support (fr/ar/en)
-Secure payments and HTTPS, sanitized inputs, rate limits
-High availability for booking operations (avoid double-booking with DB transactions/row locking)
-Immediate next steps (I can do these now)
+Progress update — TODO list created and the scaffold task is marked in-progress.
 
-Confirm scope & priorities: user roles, must-have cities/routes, payment required, and whether you want admin and accounts.
-If you want, I'll scaffold a Next.js project with:
-Tailwind CSS, TypeScript (optional), Prisma + SQLite (dev) or Postgres, basic API endpoints and minimal booking flow.
-Or I can create a smaller static prototype (Figma-like wireframe + HTML/CSS) to validate UX first.
-Permissions / decisions I need from you
+Next steps I recommend (please confirm the following choices so I can start scaffolding immediately):
 
-Which stack do you prefer? (Next.js recommended)
-Do you want payments in MVP or deferred to later?
-Languages to support initially (French, Arabic, English?)
-Mobile-first responsive layout required? (Yes recommended)
-If you want me to start right away, pick one of:
+Stack: Next.js + TypeScript + Tailwind CSS (recommended). OK?
+DB/ORM: Prisma with SQLite for local dev, Postgres in production. OK?
+Payments: Defer payments to next milestone (I’ll add a Stripe stub/webhook). Do you want to enable payments in MVP or defer?
+Languages: Start with English + French (add Arabic later). OK?
+Accounts & Admin: Include basic admin UI and optional user accounts (guest bookings allowed). OK?
+Mobile: Mobile-first responsive design — yes.
+If you confirm these (or give alternate choices, e.g., prefer plain JS instead of TypeScript, or want payments now), I’ll:
 
-Scaffold Next.js + API + DB (I will create the repo structure, basic models, and a simple search + booking API).
-Build a clickable UI prototype (HTML/CSS or Figma-style).
-Start backend-only (DB schema + REST API + admin CLI).
-Which of the three should I start with? If you pick 1, I’ll create the project skeleton and implement the first endpoints (routes/schedules search + booking POST) and show how to run it locally.
+Scaffold the Next.js project with TypeScript + Tailwind + Prisma (SQLite).
+Add initial models (User, Vehicle, Route, Schedule, Booking) to Prisma schema.
+Implement a simple GET /api/routes and POST /api/bookings endpoint and the minimal frontend search -> results -> booking pages.
+Show exact commands to run locally and commit the initial scaffold.
+Which choices do you confirm (or change)? Once you confirm, I’ll scaffold the project and continue — I’ll keep the todo list updated as I progress and run quick tests after scaffold to verify everything works.
 
-i am a beginner go with me step by step to make a solid good website
+GPT-5 mini • 0x
+Restore Checkpoint
+Stack: OK
+DB/ORM: OK
+payment: the client can book from website using card or cash when he arrived to destination
+Languages : i want this tree frensh english and arabic aslo
+Account & admin : OK
+Mobile: explain it if good OK
