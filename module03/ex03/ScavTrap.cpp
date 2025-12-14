@@ -18,12 +18,11 @@ ScavTrap::ScavTrap(std::string const& _name) : ClapTrap(_name)
     std::cout << "ScavTrap Parameterized constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const& other): ClapTrap(other.name)
+ScavTrap::ScavTrap(ScavTrap const& other): ClapTrap(other)
 {
-    HP = other.HP;
-    EP = other.EP;
-    AD = other.AD;
-    
+    this->HP = 100;
+    this->EP = 50;
+    this->AD = 20;
     std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
 
@@ -32,6 +31,9 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
     if (this != &other)
     {
         ClapTrap::operator=(other);
+        this->HP = 100;
+        this->EP = 50;
+        this->AD = 20;
         std::cout << "ScavTrap copy assignment operator called" << std::endl;
     }
     return *this;
