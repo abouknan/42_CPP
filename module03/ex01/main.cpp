@@ -16,5 +16,6 @@ int main(void)
         a.attack("Victor");
         a.takeDamage(5);
         a.beRepaired(6);
+        a.guardGate();
     }
 }
