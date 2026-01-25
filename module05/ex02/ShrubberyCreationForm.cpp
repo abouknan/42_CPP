@@ -1,14 +1,10 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string _target)
-    : AForm("ShrubberyCreationForm", 145, 137), target(_target)
-{
-}
+    : AForm("ShrubberyCreationForm", 145, 137), target(_target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& other)
-    : AForm(other), target(other.target)
-{
-}
+    : AForm(other), target(other.target) {}
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const& other)
 {
@@ -20,9 +16,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
     return *this;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
-{
-}
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::executeAction() const
 {
@@ -33,21 +27,14 @@ void ShrubberyCreationForm::executeAction() const
         return;
     }
 
-    file << "       ###\n";
-    file << "      #o###\n";
-    file << "    #####o###\n";
-    file << "   #o#\\#|#/###\n";
-    file << "    ###\\|/#o#\n";
-    file << "     # }|{  #\n";
-    file << "       }|{\n";
-    file << "\n";
-    file << "      ^^^^^\n";
-    file << "     ^^^^^^^\n";
-    file << "    ^^^^^^^^^\n";
-    file << "   ^^^^^^^^^^^\n";
-    file << "      | |\n";
-    file << "      | |\n";
-    file << "     ~~~~~~~\n";
+    file << "      *\n";
+    file << "     ***\n";
+    file << "    *****\n";
+    file << "   *******\n";
+    file << "  *********\n";
+    file << " ***********\n";
+    file << "     ***\n";
+    file << "     ***\n";
 
     file.close();
     std::cout << "Shrubbery has been planted at " << this->target << std::endl;

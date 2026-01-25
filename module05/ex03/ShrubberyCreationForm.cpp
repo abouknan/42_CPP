@@ -33,21 +33,14 @@ void ShrubberyCreationForm::executeAction() const
         return;
     }
 
-    file << "       ###\n";
-    file << "      #o###\n";
-    file << "    #####o###\n";
-    file << "   #o#\\#|#/###\n";
-    file << "    ###\\|/#o#\n";
-    file << "     # }|{  #\n";
-    file << "       }|{\n";
-    file << "\n";
-    file << "      ^^^^^\n";
-    file << "     ^^^^^^^\n";
-    file << "    ^^^^^^^^^\n";
-    file << "   ^^^^^^^^^^^\n";
-    file << "      | |\n";
-    file << "      | |\n";
-    file << "     ~~~~~~~\n";
+    file << "      *\n";
+    file << "     ***\n";
+    file << "    *****\n";
+    file << "   *******\n";
+    file << "  *********\n";
+    file << " ***********\n";
+    file << "     ***\n";
+    file << "     ***\n";
 
     file.close();
     std::cout << "Shrubbery has been planted at " << this->target << std::endl;
