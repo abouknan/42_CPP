@@ -3,7 +3,7 @@
 
 int main()
 {
-    std::cout << "Testing generate / identify (pointer):" << std::endl;
+    std::cout << "Generate (pointer):" << std::endl;
     for (int i = 0; i < 5; ++i)
     {
         Base* p = generate();
@@ -11,7 +11,7 @@ int main()
         delete p;
     }
 
-    std::cout << "\nTesting identify (reference):" << std::endl;
+    std::cout << "\n Generate (reference):" << std::endl;
     A a; B b; C c;
     identify(a);
     identify(b);
