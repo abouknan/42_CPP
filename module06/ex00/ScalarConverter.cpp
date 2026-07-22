@@ -12,7 +12,7 @@ ScalarConverter &ScalarConverter::operator=(ScalarConverter const &other)
     return *this;
 }
 
-void ScalarConverter::printImpossible()
+void printImpossible()
 {
     std::cout << "char: impossible" << std::endl;
     std::cout << "int: impossible" << std::endl;
@@ -20,7 +20,7 @@ void ScalarConverter::printImpossible()
     std::cout << "double: impossible" << std::endl;
 }
 
-void ScalarConverter::toChar(double value)
+void toChar(double value)
 {
     if (std::isnan(value) || std::isinf(value) || 
         value < std::numeric_limits<char>::min() || 
@@ -36,7 +36,7 @@ void ScalarConverter::toChar(double value)
     std::cout << "char: Non displayable" << std::endl;
 }
 
-void ScalarConverter::toInt(double value)
+void toInt(double value)
 {
     if (std::isnan(value) || std::isinf(value) || 
         value < std::numeric_limits<int>::min() || 
@@ -48,17 +48,17 @@ void ScalarConverter::toInt(double value)
     std::cout << "int: " << static_cast<int>(value) << std::endl;
 }
 
-void ScalarConverter::toFloat(double value)
+void toFloat(double value)
 {
     std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
 }
 
-void ScalarConverter::toDouble(double value)
+void toDouble(double value)
 {
     std::cout << "double: " << value << std::endl;
 }
 
-void ScalarConverter::printConvertedResult(double value) 
+void printConvertedResult(double value) 
 {
     std::cout << std::fixed << std::setprecision(1);
     toChar(value);

@@ -18,13 +18,6 @@ private:
     ScalarConverter& operator=(const ScalarConverter&);
     ~ScalarConverter();
 
-    static void printImpossible();
-    static void printConvertedResult(double value);
-    static void toChar(double value);
-    static void toInt(double value);
-    static void toFloat(double value);
-    static void toDouble(double value);
-
 public:
     static void convert(const std::string& literal);
 };
