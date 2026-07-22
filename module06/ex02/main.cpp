@@ -11,7 +11,7 @@ int main()
         delete p;
     }
 
-    std::cout << "\n Generate (reference):" << std::endl;
+    std::cout << "\nGenerate (reference):" << std::endl;
     A a; B b; C c;
     identify(a);
     identify(b);
