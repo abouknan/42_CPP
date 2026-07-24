@@ -1,9 +1,9 @@
 CX = c++
 CXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRCS = main.cpp iter.hpp
+SRCS = main.cpp
 
-OBJS = $(patsubst %.cpp,%.o,$(filter %.cpp,$(SRCS)))
+OBJS = $(SRCS:.cpp=.o)
 NAME = ex01
 
 all: $(NAME)
