@@ -1,32 +1,27 @@
-#pragma once
+#ifndef MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 
 #include <stack>
-#include <iostream>
-#include <iterator>
-
-using std::cout;
-using std::endl;
-using std::stack;
 
 template <typename T>
-class MutantStack : public stack<T>
+class MutantStack : public std::stack<T>
 {
     public:
         MutantStack() {}
-        MutantStack(const MutantStack &other) : stack<T>(other) {}
-    
+        MutantStack(const MutantStack &other) : std::stack<T>(other) {}
+
         MutantStack &operator=(const MutantStack &other)
         {
             if (this != &other)
-                stack<T>::operator=(other);
+                std::stack<T>::operator=(other);
             return *this;
         }
-    
+
         ~MutantStack() {}
 
-        typedef typename stack<T>::container_type::iterator iterator;
-    
-        iterator begin() { return stack<T>::c.begin(); }
-        iterator end() { return stack<T>::c.end(); }
+        typedef typename std::stack<T>::container_type::iterator iterator;
 
+        iterator begin() { return std::stack<T>::c.begin(); }
+        iterator end() { return std::stack<T>::c.end(); }
 };
+#endif

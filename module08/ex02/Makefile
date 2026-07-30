@@ -1,40 +1,25 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: deryacar <deryacar@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/15 14:33:47 by deryacar          #+#    #+#              #
-#    Updated: 2025/02/15 15:45:28 by deryacar         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+CX = c++
+CXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRC = main.cpp 
-OBJ = $(SRC:.cpp=.o)
-CXX = c++
-RM = rm -f
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = main.cpp
 
-NAME = stack
+OBJS = $(SRCS:.cpp=.o)
+NAME = MutantStack
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-	@echo "\033[0;32mDone\033[m"
-
-clean:
-	@$(RM) $(OBJ) $(NAME)
-	@echo "\033[0;34mclean\033[m"
+$(NAME): $(OBJS)
+	$(CX) $(CXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CX) $(CXFLAGS) -c $< -o $@
+
+clean:
+	rm -rf $(OBJS)
 
 fclean: clean
-	@$(RM) $(NAME)
-	@echo "\033[0;36mfclean\033[m"
+	rm -rf $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 .PHONY: all clean fclean re

@@ -1,32 +1,24 @@
-#pragma once
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
 #include <vector>
-#include <iostream>  
 #include <algorithm>
-#include <stdexcept> 
-
-using std::cerr;
-using std::cout;
-using std::endl;
-using std::exception;
-using std::logic_error;
-using std::overflow_error;
-using std::vector;
+#include <stdexcept>
 
 class Span
 {
-private:
-    unsigned int _maxSize; 
-    vector<int> _numbers;  
+    private:
+        unsigned int _maxSize;
+        std::vector<int> _numbers;
+    public:
+        Span(unsigned int N);
+        Span(const Span &other);
+        Span &operator=(const Span &other);
+        ~Span();
 
-public:
-    Span(unsigned int N);               
-    Span(const Span &other);            
-    Span &operator=(const Span &other); 
-    ~Span();                           
-
-    void addNumber(int number);                                              
-    void addNumbers(vector<int>::iterator begin, vector<int>::iterator end); 
-    int shortestSpan();                                                     
-    int longestSpan();           
+        void addNumber(int number);
+        void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+        int shortestSpan();
+        int longestSpan();
 };
+#endif

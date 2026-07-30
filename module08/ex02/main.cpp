@@ -1,30 +1,24 @@
+#include <iostream>
 #include "MutantStack.hpp"
 
 int main()
 {
     MutantStack<int> mstack;
 
-    mstack.push(5);
-    mstack.push(17);
-
-    cout << "Top: " << mstack.top() << endl;
-
-    mstack.pop();
-
-    cout << "Size: " << mstack.size() << endl;
-
+    mstack.push(1);
+    mstack.push(2);
     mstack.push(3);
+    mstack.push(4);
     mstack.push(5);
-    mstack.push(737);
-    mstack.push(0);
 
-    cout << "Stack elements: ";
+    std::cout << "top: " << mstack.top() << std::endl;
+    mstack.pop();
+    std::cout << "top after pop: " << mstack.top() << std::endl;
+
+    std::cout << "elements: ";
     for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it)
-    {
-        cout << *it << " ";
-    }
-    cout << endl;
-    cout << "Size: " << mstack.size() << endl;
+        std::cout << *it << " ";
+    std::cout << std::endl;
 
     return 0;
 }
