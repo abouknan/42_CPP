@@ -2,10 +2,7 @@
 
 Span::Span(unsigned int N) : _maxSize(N) {}
 
-Span::Span(const Span &other)
-{
-    *this = other;
-}
+Span::Span(const Span &other) {*this = other;}
 
 Span &Span::operator=(const Span &other)
 {
